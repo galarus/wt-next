@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Quicksand, Forum } from 'next/font/google'
 import {Button} from "@nextui-org/react";
+import {  SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
 const quicksand = Quicksand({
   weight: ['300', '400'],
@@ -17,7 +18,14 @@ const forum = Forum({
 export default function Home() {
   return (
     <div className="w-[1920px] h-[1080px] relative bg-white">
-      <div className="w-[1920px] h-[121px] top-0 left=0 absolute bg-black/45"> test</div>
+      <div className="w-[1920px] h-[121px] top-0 left=0 absolute bg-black/45"> 
+       <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+      </div>
       <Image alt="Hero Image" height={1080} width={1920}
         src={"/hero_cropped.png"} />
       <div className="w-[893px] h-[662px] left-[88px] top-[240px] absolute bg-gradient-to-b from-black/40 via-black/5 to-black/40" />
