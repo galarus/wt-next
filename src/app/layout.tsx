@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-import {NextUIProvider} from "@nextui-org/react";
-import { ClerkProvider,  } from '@clerk/nextjs'
+import { NextUIProvider } from "@nextui-org/react";
+import { ClerkProvider, } from '@clerk/nextjs'
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,16 +15,16 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <body>
- <header>
-           
+      <html lang="en">
+        <body>
+          <header>
+
           </header>
-        <NextUIProvider>
-          {children}
-        </NextUIProvider>
-      </body>
-    </html>
+          <NextUIProvider>
+            {children}
+          </NextUIProvider>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
