@@ -1,101 +1,51 @@
 import Image from "next/image";
+import { Quicksand, Forum } from 'next/font/google'
+import {Button} from "@nextui-org/react";
+
+const quicksand = Quicksand({
+  weight: ['300', '400'],
+  subsets: ['latin'],
+  variable: '--font-quicksand'
+})
+const forum = Forum({
+  weight: '400',
+  variable: '--font-forum',
+  subsets: ['latin'],
+  //display: 'swap'
+})
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="w-[1920px] h-[1080px] relative bg-white">
+      <div className="w-[1920px] h-[121px] top-0 left=0 absolute bg-black/45"> test</div>
+      <Image alt="Hero Image" height={1080} width={1920}
+        src={"/hero_cropped.png"} />
+      <div className="w-[893px] h-[662px] left-[88px] top-[240px] absolute bg-gradient-to-b from-black/40 via-black/5 to-black/40" />
+      <div className="w-[1536px] h-[1080px] left-[170px] top-0 absolute">
+        <div className="w-[1536px] h-[130px] left-0 top-[950px] absolute" />
+        <div className="w-[1536px] h-[820px] left-0 top-[130px] absolute">
+          <div className="w-[779px] p-5 left-0 top-[400px] absolute bg-white/10 rounded-[10px] backdrop-blur justify-start items-center gap-2.5 inline-flex">
+            <div className="w-[758px] text-white text-2xl font-semibold font-quicksand">A new virtual tabletop. <br />
+              <br />Voice and video chat with friends, share your screen, and explore a breadth of plugins to enhance your experience.<br /><br />Play board games, delve dungeons, or simply hang out in a customized room.</div>
+          </div>
+          <div className={`w-[662px] h-[156px] left-0 top-[209px] absolute text-white text-9xl ${forum.className}`}>Wyrm Table</div>
+          <div className={`w-[463px] h-20 left-0 top-[137px] absolute text-white text-[40px] font-light ${quicksand.className}`}>welcome, wanderer, to...</div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="w-[1618px] h-[196px] left-[-61px] top-[32px] absolute" >
+          <div className="w-[202px] h-[52px] left-[229px] top-[7px] absolute text-white text-2xl font-bold font-quicksand">About</div>
+          <div className="w-[226px] h-[52px] left-[431px] top-[7px] absolute text-white text-2xl font-bold font-quicksand">Blog</div>
+          <div className="w-[200px] h-[52px] left-[599px] top-[7px] absolute text-white text-2xl font-bold font-quicksand">Contact</div>
+        <div className="w-[200px] left-[1550px] h-[52px] top-[7px] absolute text-white text-2xl font-bold font-quicksand">Profile</div>
+        </div>
+        <Image src="/blueorb.png"
+          width={204} height={204} alt="home logo"
+          className="left-[-82px] top-[-40px] absolute"
+        />
+      </div>
+   <Button color="warning" variant="shadow" size='lg' className='left-[700px] top-[820px] absolute font-quicksand font-medium leading-loose' >
+        ENTER
+      </Button>  
+    
     </div>
   );
 }
